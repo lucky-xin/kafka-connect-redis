@@ -30,7 +30,7 @@ The client mode to use when interacting with the Redis cluster.
 
 *Type:* String
 
-*Default Value:* Standalone
+*Default Value:* STANDALONE
 
 *Validator:* Matches: ``STANDALONE``, ``CLUSTER``, ``SENTINEL``, ``MASTER_SLAVE``
 
@@ -193,7 +193,7 @@ But if it sent successfully then <code>timeout</code> will be started.
 
 *Default Value:* 3
 
-##### `redis.retry.attempts`
+##### `redis.retry.attempts.ms`
 
 Defines time interval for another one attempt send Redis command 
 if it hasn't been sent already.
