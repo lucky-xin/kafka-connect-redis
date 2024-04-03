@@ -8,19 +8,6 @@ The Redis plugin is a collection of connectors that are used to interact with a 
 
 The Redis Sink Connector is used to write data from Kafka to a Redis cache.
 
-### Important
-
-This connector expects records from Kafka to have a key and value that are stored as bytes or a string. If your data is
-already in Kafka in the format that you want in Redis consider using the ByteArrayConverter or the StringConverter for
-this connector. Keep in this does not need to be configured in the worker properties and can be configured at the
-connector level. If your data is not sitting in Kafka in the format you wish to persist in Redis consider using a Single
-Message Transformation to convert the data to a byte or string representation before it is written to Redis.
-
-### Note
-
-This connector supports deletes. If the record stored in Kafka has a null value, this connector will send a delete with
-the corresponding key to Redis.
-
 ### Configuration
 
 #### General
@@ -218,53 +205,6 @@ Default is <code>1500</code> milliseconds
 
 *Default Value:* 1500
 
-#### Examples
-
-##### Standalone Example
-
-This configuration is used typically along
-with [standalone mode](http://docs.confluent.io/current/connect/concepts.html#standalone-workers).
-
-```properties
-name=RedisSinkConnector1
-connector.class=com.github.jcustenborder.kafka.connect.redis.RedisSinkConnector
-tasks.max=1
-topics=< Required Configuration >
-```
-
-##### Distributed Example
-
-This configuration is used typically along
-with [distributed mode](http://docs.confluent.io/current/connect/concepts.html#distributed-workers).
-Write the following json to `connector.json`, configure all of the required values, and use the command below to
-post the configuration to one the distributed connect worker(s).
-
-```json
-{
-  "config": {
-    "name": "RedisSinkConnector1",
-    "connector.class": "com.github.jcustenborder.kafka.connect.redis.RedisSinkConnector",
-    "tasks.max": "1",
-    "topics": "< Required Configuration >"
-  }
-}
-```
-
-Use curl to post the configuration to one of the Kafka Connect Workers. Change `http://localhost:8083/` the the endpoint
-of
-one of your Kafka Connect worker(s).
-
-Create a new instance.
-
-```bash
-curl -s -X POST -H 'Content-Type: application/json' --data @connector.json http://localhost:8083/connectors
-```
-
-Update an existing instance.
-
-```bash
-curl -s -X PUT -H 'Content-Type: application/json' --data @connector.json http://localhost:8083/connectors/TestSinkConnector1/config
-```
 
 
 
