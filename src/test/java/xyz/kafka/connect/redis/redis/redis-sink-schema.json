@@ -1,0 +1,658 @@
+{
+  "type": "object",
+  "title": "redis.command",
+  "description": "redis命令schema",
+  "properties": {
+    "SET": {
+      "type": "object",
+      "title": "xyz.redis.set",
+      "connect.index": 0,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "value": {
+          "type": "string",
+          "connect.index": 1
+        },
+        "condition": {
+          "connect.index": 2,
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "expire_type": {
+          "type": "string",
+          "connect.index": 3
+        },
+        "time": {
+          "type": "integer",
+          "connect.index": 4,
+          "connect.type": "int64"
+        }
+      }
+    },
+    "DEL": {
+      "type": "object",
+      "title": "xyz.redis.del",
+      "connect.index": 1,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        }
+      }
+    },
+    "SETNX": {
+      "type": "object",
+      "title": "xyz.redis.setnx",
+      "connect.index": 2,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "value": {
+          "type": "string",
+          "connect.index": 1
+        }
+      }
+    },
+    "INCR": {
+      "type": "object",
+      "title": "xyz.redis.incr",
+      "connect.index": 3,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        }
+      }
+    },
+    "INCRBY": {
+      "type": "object",
+      "title": "xyz.redis.incrby",
+      "connect.index": 4,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "increment": {
+          "type": "integer",
+          "connect.index": 1,
+          "connect.type": "int64"
+        }
+      }
+    },
+    "INCRBYFLOAT": {
+      "type": "object",
+      "title": "xyz.redis.incrbyfloat",
+      "connect.index": 5,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "increment": {
+          "type": "number",
+          "connect.index": 1,
+          "connect.type": "float64"
+        }
+      }
+    },
+    "DECR": {
+      "type": "object",
+      "title": "xyz.redis.decr",
+      "connect.index": 6,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        }
+      }
+    },
+    "DECRBY": {
+      "type": "object",
+      "title": "xyz.redis.decrby",
+      "connect.index": 7,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "decrement": {
+          "type": "integer",
+          "connect.index": 1,
+          "connect.type": "int64"
+        }
+      }
+    },
+    "PERSIST": {
+      "type": "object",
+      "title": "xyz.redis.persist",
+      "connect.index": 8,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        }
+      }
+    },
+    "EXPIRE": {
+      "type": "object",
+      "title": "xyz.redis.expire",
+      "connect.index": 9,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "seconds": {
+          "type": "integer",
+          "connect.index": 1,
+          "connect.type": "int64"
+        }
+      }
+    },
+    "EXPIREAT": {
+      "type": "object",
+      "title": "xyz.redis.expireat",
+      "connect.index": 10,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "timestamp": {
+          "type": "integer",
+          "connect.index": 1,
+          "connect.type": "int64"
+        }
+      }
+    },
+    "PTTL": {
+      "type": "object",
+      "title": "xyz.redis.pttl",
+      "connect.index": 11,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        }
+      }
+    },
+    "HSET": {
+      "type": "object",
+      "title": "xyz.redis.hset",
+      "connect.index": 12,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "field": {
+          "type": "string",
+          "connect.index": 1
+        },
+        "value": {
+          "type": "string",
+          "connect.index": 2
+        }
+      }
+    },
+    "HSETNX": {
+      "type": "object",
+      "title": "xyz.redis.hsetnx",
+      "connect.index": 13,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "field": {
+          "type": "string",
+          "connect.index": 1
+        },
+        "value": {
+          "type": "string",
+          "connect.index": 2
+        }
+      }
+    },
+    "HMSET": {
+      "type": "object",
+      "title": "xyz.redis.hmset",
+      "connect.index": 14,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "fields": {
+          "type": "object",
+          "connect.index": 1,
+          "connect.type": "map",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "HDEL": {
+      "type": "object",
+      "title": "xyz.redis.hdel",
+      "connect.index": 15,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "fields": {
+          "type": "array",
+          "connect.index": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "HINCRBY": {
+      "type": "object",
+      "title": "xyz.redis.hincrby",
+      "connect.index": 16,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "field": {
+          "type": "string",
+          "connect.index": 1
+        },
+        "increment": {
+          "type": "integer",
+          "connect.index": 2,
+          "connect.type": "int64"
+        }
+      }
+    },
+    "HINCRBYFLOAT": {
+      "type": "object",
+      "title": "xyz.redis.hincrbyfloat",
+      "connect.index": 17,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "field": {
+          "type": "string",
+          "connect.index": 1
+        },
+        "increment": {
+          "type": "number",
+          "connect.index": 2,
+          "connect.type": "float64"
+        }
+      }
+    },
+    "LREM": {
+      "type": "object",
+      "title": "xyz.redis.lrem",
+      "connect.index": 18,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "value": {
+          "type": "string",
+          "connect.index": 1
+        },
+        "count": {
+          "type": "integer",
+          "connect.index": 2,
+          "connect.type": "int64"
+        }
+      }
+    },
+    "LPUSH": {
+      "type": "object",
+      "title": "xyz.redis.lpush",
+      "connect.index": 19,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "values": {
+          "type": "array",
+          "connect.index": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "LPOP": {
+      "type": "object",
+      "title": "xyz.redis.lpop",
+      "connect.index": 20,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "count": {
+          "connect.index": 1,
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "integer",
+              "connect.type": "int32"
+            }
+          ]
+        }
+      }
+    },
+    "RPUSH": {
+      "type": "object",
+      "title": "xyz.redis.rpush",
+      "connect.index": 21,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "values": {
+          "type": "array",
+          "connect.index": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "RPOP": {
+      "type": "object",
+      "title": "xyz.redis.rpop",
+      "connect.index": 22,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "count": {
+          "connect.index": 1,
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "integer",
+              "connect.type": "int32"
+            }
+          ]
+        }
+      }
+    },
+    "SADD": {
+      "type": "object",
+      "title": "xyz.redis.sadd",
+      "connect.index": 23,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "values": {
+          "type": "array",
+          "connect.index": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "SREM": {
+      "type": "object",
+      "title": "xyz.redis.srem",
+      "connect.index": 24,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "values": {
+          "type": "array",
+          "connect.index": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ZADD": {
+      "type": "object",
+      "title": "xyz.redis.zadd",
+      "connect.index": 25,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "member": {
+          "type": "string",
+          "connect.index": 1
+        },
+        "score": {
+          "type": "number",
+          "connect.index": 2,
+          "connect.type": "float64"
+        }
+      }
+    },
+    "ZINCRBY": {
+      "type": "object",
+      "title": "xyz.redis.zincrby",
+      "connect.index": 26,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "member": {
+          "type": "string",
+          "connect.index": 1
+        },
+        "increment": {
+          "type": "number",
+          "connect.index": 2,
+          "connect.type": "float64"
+        }
+      }
+    },
+    "ZREM": {
+      "type": "object",
+      "title": "xyz.redis.zrem",
+      "connect.index": 27,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "members": {
+          "type": "array",
+          "connect.index": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ZREM_RANGE_BY_INDEX": {
+      "type": "object",
+      "title": "xyz.redis.zrem_range_by_lex",
+      "connect.index": 28,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "min": {
+          "type": "integer",
+          "connect.index": 1,
+          "connect.type": "int32"
+        },
+        "max": {
+          "type": "integer",
+          "connect.index": 2,
+          "connect.type": "int32"
+        }
+      }
+    },
+    "ZREM_RANGE_BY_SCORE": {
+      "type": "object",
+      "title": "xyz.redis.zrem_range_by_score",
+      "connect.index": 29,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "start": {
+          "type": "number",
+          "connect.index": 1,
+          "connect.type": "float64"
+        },
+        "end": {
+          "type": "number",
+          "connect.index": 2,
+          "connect.type": "float64"
+        }
+      }
+    },
+    "GEO_ADD": {
+      "type": "object",
+      "title": "xyz.redis.geo_add",
+      "connect.index": 30,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "values": {
+          "type": "array",
+          "connect.index": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "type": "number",
+                "connect.index": 2,
+                "connect.type": "float64"
+              },
+              "member": {
+                "type": "string",
+                "connect.index": 0
+              },
+              "longitude": {
+                "type": "number",
+                "connect.index": 1,
+                "connect.type": "float64"
+              }
+            }
+          }
+        }
+      }
+    },
+    "JSON_SET": {
+      "type": "object",
+      "title": "xyz.redis.json_set",
+      "connect.index": 31,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "path": {
+          "connect.index": 1,
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "value": {
+          "type": "string",
+          "connect.index": 2
+        }
+      }
+    },
+    "JSON_ARR_APPEND": {
+      "type": "object",
+      "title": "xyz.redis.json_arr_append",
+      "connect.index": 32,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "path": {
+          "connect.index": 1,
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "value": {
+          "type": "string",
+          "connect.index": 2
+        }
+      }
+    },
+    "JSON_ARR_INSERT": {
+      "type": "object",
+      "title": "xyz.redis.json_arr_insert",
+      "connect.index": 33,
+      "properties": {
+        "key": {
+          "type": "string",
+          "connect.index": 0
+        },
+        "path": {
+          "type": "string",
+          "connect.index": 1
+        },
+        "index": {
+          "type": "integer",
+          "connect.index": 2,
+          "connect.type": "int32"
+        },
+        "values": {
+          "type": "array",
+          "connect.index": 3,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
