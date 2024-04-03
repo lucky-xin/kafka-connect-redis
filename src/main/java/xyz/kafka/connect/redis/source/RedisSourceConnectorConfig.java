@@ -2,12 +2,10 @@ package xyz.kafka.connect.redis.source;
 
 import cn.hutool.core.lang.Pair;
 import cn.hutool.core.text.StrPool;
-import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.common.config.ConfigDef;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.SchemaBuilder;
 import xyz.kafka.connect.redis.AbstractRedisConnectorConfig;
-import xyz.kafka.connector.config.RedissonConfig;
 import xyz.kafka.connector.validator.Validators;
 
 import java.util.Collections;

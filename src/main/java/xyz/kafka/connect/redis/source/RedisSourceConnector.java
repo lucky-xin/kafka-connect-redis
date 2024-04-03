@@ -3,17 +3,12 @@ package xyz.kafka.connect.redis.source;
 import org.apache.kafka.common.config.ConfigDef;
 import org.apache.kafka.connect.connector.Task;
 import org.apache.kafka.connect.sink.SinkConnector;
-import xyz.kafka.connect.redis.AbstractRedisConnectorConfig;
 import xyz.kafka.connect.redis.Versions;
 import xyz.kafka.connector.config.RedissonConfig;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
-import static xyz.kafka.connect.redis.AbstractRedisConnectorConfig.CONNECTION_PASSWORD;
-import static xyz.kafka.connect.redis.AbstractRedisConnectorConfig.CONNECTION_URL;
-import static xyz.kafka.connect.redis.AbstractRedisConnectorConfig.CONNECTION_USER;
 
 /**
  * Entry point for Kafka Connect Redis Sink.

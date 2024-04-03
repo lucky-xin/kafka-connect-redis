@@ -2,10 +2,7 @@ package xyz.kafka.connect.redis;
 
 import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.common.config.ConfigDef;
-import org.apache.kafka.common.config.ConfigDef.Type;
 import xyz.kafka.connector.config.RedissonConfig;
-import xyz.kafka.connector.validator.Validators;
-import xyz.kafka.utils.StringUtil;
 
 import java.util.Map;
 

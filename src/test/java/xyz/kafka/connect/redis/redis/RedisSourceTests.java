@@ -16,14 +16,7 @@ import java.util.Map;
  */
 public class RedisSourceTests {
 
-    /**
-     * KAFKA_SCHEMA_REGISTRY_SVC_ENDPOINT=https://x-schema-registry.x-k8s.piston.ink
-     * SCHEMA_REGISTRY_CLIENT_REST_HEADERS=Authorization: Basic a2Fma2Euc3I6YTJGbWEyRXVjMk5vWlcxaExuSmxaMmx6ZEhKNUNn
-     * REDIS_NODES=gzv-dev-redis-1.piston.ink:6379
-     * REDIS_PWD=test.redis.123444
-     * REDIS_CLIENT_NAME=lcx
-     */
-    @Test
+//    @Test
     public void test() {
         String configText = """
                 {

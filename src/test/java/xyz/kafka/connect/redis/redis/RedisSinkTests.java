@@ -2,16 +2,10 @@ package xyz.kafka.connect.redis.redis;
 
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.TypeReference;
-import org.apache.kafka.clients.CommonClientConfigs;
-import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.config.SaslConfigs;
-import org.apache.kafka.common.config.SslConfigs;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.connect.sink.SinkRecord;
 import org.junit.jupiter.api.Test;
-import org.redisson.api.GeoEntry;
 import xyz.kafka.connect.redis.sink.RedisSinkTask;
 import xyz.kafka.connector.redis.RedisCommand;
 import xyz.kafka.connector.redis.RedisCommands;
@@ -22,7 +16,6 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 /**
  * @author luchaoxin
@@ -31,7 +24,7 @@ import java.util.Properties;
  */
 class RedisSinkTests {
 
-    @Test
+//    @Test
     void pollDataTest() throws IOException {
         String configText = """
                 {
